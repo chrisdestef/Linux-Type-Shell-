@@ -1,0 +1,104 @@
+MYSHELL MANUAL: 
+
+Internal Commands: 
+
+cd: change current directory 
+    Takes 1 argument which is the name of the directory you want to change too
+    It can either be a relative or whole path 
+
+clr: clear screen content
+    Takes no arguments 
+    prints a number of new lines equal to a constant SHELLSIZE
+
+dir: list current directory content
+    Takes no arguments 
+    Lists all content in the current folder 
+
+environ: list environment variables
+    Takes no arguments 
+    Prints several strings pertaining to important information about the shell
+
+echo : repeat the first argument
+    Takes one argument and repeats it 
+
+help : prints this manual 
+    Takes no arguments 
+
+pause : suspends the shell 
+    Takes no arguments
+    Does nothing till the user hits enter 
+
+quit : exits the shell 
+    Takes no arguments
+    calls exit(1)
+
+Command Format:
+
+Each part of the command is seperated by a white space. 
+
+EX: cd /home/chris 
+Sets the currecnt directory to the home directory 
+
+EX: echo 12345
+Prints 12345 to the screen
+
+
+
+If the string entered before the first space is not one of these internal commands then it is assumed that the command is the name of an executable to be run and that it is located in the current working directory
+
+
+EX: exe_name
+Runs the executable with name exe_name
+
+I/O REDIRECTION:
+
+MyShell allows you to redirect the input and output of programs that are executed
+
+Input Redirection: 
+This is signified with character < 
+It means that the file name proceeding the < character will get its input from the file following it 
+
+EX: 
+exe_name < t.txt 
+where exe_name is an executable that takes input from the user 
+and t.txt is a text file containg the input 
+
+
+
+Output Redirection 
+This is signified with character > 
+It means that the file name proceeding the > character will send its output to file following it 
+
+EX: 
+exe_name > t.txt 
+where exe_name is an executable that prints to the screen  
+and t.txt is a text file with which you want to print exe_name's output too 
+
+
+PIPING: 
+A pipe is signified with the character |
+It is used to bridge two files togehter 
+
+EX: exe1 | exe2 
+This creates a bridge where exe1's standard input is redirected to exe2 
+and exe2's standard output is redirected to exe1. 
+
+
+BACKGROUND EXECUTION: 
+This is signified with the character & terminating the command 
+When a command is ran in the background it will not interact with the user at all 
+Meaning it's standard input and output are turned off, however the command will stil run. 
+
+EX: 
+exe1 &
+exe1 runs in the background and wont interact with the user
+
+
+PARALLEL COMMANDS: 
+Running Parall commands is signified by stringing commmands togehter with the & character 
+Commands ran in parallel will exectue sequentlly
+
+EX: 
+exe & exe2
+This will execute the file exe and then execute exe2 
+

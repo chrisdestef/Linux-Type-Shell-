@@ -1,0 +1,4 @@
+# Chris DeStefano, Operating system and  
+# CompLab1/01 tutor: Fred Bloggs  
+P2: P2.cpp 
+	g++ -std=c++11 -g P2.cpp -o makeoutput 
